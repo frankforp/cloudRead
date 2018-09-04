@@ -1,1 +1,97 @@
 /* pages/bookDetail/bookDetail.wxss */
+.header{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20rpx 0 40rpx 0;
+  border-bottom: 2px solid #666
+}
+.header .book-message{
+  display: flex;
+  justify-content: space-between;
+  width: 710rpx
+}
+.header .book-message .img{
+  width: 200rpx;
+  height: 300rpx;
+  box-shadow: 0 0 2px 3px #666
+}
+.header .book-message .message-text{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-left: 20rpx;
+  width: 500rpx
+}
+.header .book-message .message-text .text-title{
+  font-size: 16px;
+  font-weight: 400;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.header .book-message .message-text .text-author{
+  margin-left: 20rpx; 
+  font-size: 14px;
+  color: #666
+}
+.header .book-message .message-text .text-author view{
+  margin-top: 30rpx
+}
+/* 头部按钮部分 */
+.header .header-btn{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60rpx
+}
+.header .header-btn button{
+  font-size: 14px;
+  padding: 0 30rpx
+}
+/* 简介部分 */
+.intro{
+  padding: 30rpx 0;
+  border-bottom: 2px solid #666
+}
+.intro .title{
+  font-size: 16px;
+  font-weight: 700
+}
+.intro .desc{
+  margin-top: 30rpx;
+  font-size: 14px;
+  line-height: 1.5
+}
+/* 查看目录部分 */
+.look-warpper{
+  display: flex;
+  justify-content: space-between;
+  padding: 30rpx 0;
+  font-size: 14px;
+  line-height: 14px
+}
+.look-warpper .look{
+  display: flex;
+  justify-content: space-between;
+}
+.look-warpper .look .look-btn{
+  margin-right: 20rpx;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 700
+}
+.look-warpper .time ,.look-warpper .look .catalog{
+  padding-top: 4rpx
+}
+/* 底部按钮部分 */
+.btn-warpper{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding :20rpx 30rpx;
+  border-top: 1px solid #CCC
+}
+.btn-warpper button{
+  color: #FFF;
+  background-color: #1296db
+}

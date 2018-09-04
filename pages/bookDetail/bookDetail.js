@@ -8,19 +8,36 @@ Page({
    * 页面的初始数据
    */
   data: {
+    isLoading: false,
+    time: '',
     detail : {}
   },
-
+  toCatalog(){
+    wx:wx.navigateTo({
+      url: `/pages/catalog/catalog?id=${this.data.detail.book._id}`,
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.id)
+    this.setData({
+      isLoading: true
+    })
+    this.getDetail(options.id)
   },
-  getDetail() {
-
+  getDetail(id) {
+    fetch.get( `/swiper/${id}`).then(res=>{
+      let timeStr = res.data.data.book.createTime.split('T')[0]
+      let times = timeStr.split('-')
+      let timeString = times[0] + '年' + times[1] + '月' + times[2] + '日'
+      this.setData({
+        detail: res.data.data,
+        time: timeString,
+        isLoading: false
+      })
+    })
   },
-
   /**
    * 用户点击右上角分享
    */

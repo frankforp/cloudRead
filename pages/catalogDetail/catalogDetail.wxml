@@ -1,0 +1,15 @@
+<!--pages/catalogDetail/catalogDetail.wxml-->
+<view class='cantainer'>
+  <image wx:if="{{isLoading}}" class='loading' src='/static/image/loading.svg'></image>
+  <view wx:else>
+  
+    <!-- 底部功能菜单 -->
+    <view class='menu'>
+      <view class=''></view>
+      <view class=''></view>
+      <view class=''></view>
+      <view class=''></view>
+      <view class=''></view>
+    </view>
+  </view>
+</view>

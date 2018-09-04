@@ -1,0 +1,11 @@
+<!--pages/catalog/catalog.wxml-->
+<view class='container'>
+  <image wx:if="{{isLoading}}" class='loading' src='/static/image/loading.svg'></image>
+  <view  wx:else >
+      <view class='catalog' wx:for="{{catalogs}}" wx:key="index">
+        <navigator url='/pages/catalogDetail/catalogDetail?id={{item._id}}'>
+            <view class='catalog-item'>{{item.title}}</view>    
+        </navigator>
+      </view>
+  </view>
+</view>

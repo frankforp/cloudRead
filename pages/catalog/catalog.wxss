@@ -1,0 +1,6 @@
+/* pages/catalog/catalog.wxss */
+.catalog-item{
+  padding: 20rpx;
+  font-size: 16px;
+  border-top: 2rpx solid #888
+}

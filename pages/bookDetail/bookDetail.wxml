@@ -1,2 +1,46 @@
 <!--pages/bookDetail/bookDetail.wxml-->
-<text>pages/bookDetail/bookDetail.wxml</text>
+<view class='container'>
+  <image wx:if="{{isLoading}}" class='loading' src='/static/image/loading.svg'></image>
+  <view wx:else>
+  <!-- 头部信息 -->
+    <view class='header'>
+    <!-- 书籍信息 -->
+      <view class='book-message'>
+        <view>
+          <image class='img' src='{{detail.book.img}}'></image>
+        </view>
+        <view class='message-text'>
+          <view class='text-title'>{{detail.book.title}}</view>
+          <view class='text-author'>
+            <view>作者：{{detail.book.author}}</view>
+            <view>{{detail.book.looknums}}人在看</view>
+            <view>{{detail.book.like_this_users.length}}人喜欢</view>
+          </view>
+        </view>
+      </view>
+  <!-- 收藏与分享按钮 -->
+      <view class='header-btn'>
+        <button>收藏</button>
+        <button>分享好友</button>
+      </view>
+    </view>
+  <!-- 简介部分 -->
+    <view class='intro '>
+      <view class='title'>简介</view>
+      <view class='desc'>{{detail.book.desc}}</view>
+    </view>
+    <!-- 查看目录部分 -->
+    <view class='look-warpper'>
+      <view class='look'>
+        <view class='look-btn'>查看目录</view>
+        <view class='catalog'>共{{detail.sort}}章</view>
+      </view>
+      <view class='time'>{{time}}</view>
+    </view>
+    <!-- 底部button -->
+    <view class='btn-warpper'>
+      <button bindtap='toCatalog'>阅读该书籍</button>
+    </view>
+  </view>
+
+</view>

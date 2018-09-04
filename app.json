@@ -3,7 +3,9 @@
     "pages/index/index",
     "pages/bookDetail/bookDetail",
     "pages/user/user",
-    "pages/myStudy/myStudy"
+    "pages/myStudy/myStudy",
+    "pages/catalog/catalog",
+    "pages/catalogDetail/catalogDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -17,11 +19,11 @@
         "pagePath": "pages/index/index",
         "text": "首页",
         "iconPath": "static/image/home.png",
-        "selectedIconPath" : "static/image/home-select.png"
+        "selectedIconPath": "static/image/home-select.png"
       },
       {
         "pagePath": "pages/myStudy/myStudy",
-        "text" : "我的学习",
+        "text": "我的学习",
         "iconPath": "static/image/book.png",
         "selectedIconPath": "static/image/book-selector.png"
       },
