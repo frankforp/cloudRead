@@ -3,7 +3,7 @@
   <image wx:if="{{isLoading}}" class='loading' src='/static/image/loading.svg'></image>
   <view  wx:else >
       <view class='catalog' wx:for="{{catalogs}}" wx:key="index">
-        <navigator url='/pages/catalogDetail/catalogDetail?id={{item._id}}'>
+        <navigator url='/pages/catalogDetail/catalogDetail?id={{item._id}}&bookId={{item.bookId}}&index={{item.index}}'>
             <view class='catalog-item'>{{item.title}}</view>    
         </navigator>
       </view>

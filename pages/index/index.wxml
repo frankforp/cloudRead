@@ -6,7 +6,7 @@
     <swiper indicator-dots="{{indicatorDots}}" circular="{{circular}}"
       autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
       <block wx:for="{{imgUrls}}" wx:key="index">
-        <swiper-item bindtap='jumpbook' data-id="{{item._id}}">
+        <swiper-item bindtap='jumpbook' data-id="{{item.book._id}}">
           <image src="{{item.img}}" class="slide-image"/>
         </swiper-item>
       </block>
@@ -15,9 +15,9 @@
     <view class='books-warpper' wx:for="{{books}}" wx:key="index">
       <view class='title-warpper'>
         <view class='books-title'>{{item.title}}</view>
-        <view class='more'>更多..</view>
+        <view class='more' bindtap='toMoreBook' data-type='{{item._id}}' >更多..</view>
       </view>
-      <view class='book-warpper' wx:for="{{item.books}}" wx:key="index">
+      <view bindtap='jumpbook' data-id="{{item._id}}" class='book-warpper' wx:for="{{item.books}}" wx:key="index" >
         <view>
           <image src="{{item.img}}" class='img'></image>
         </view>

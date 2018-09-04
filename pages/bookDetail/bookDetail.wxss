@@ -59,6 +59,7 @@
 .intro .desc{
   margin-top: 30rpx;
   font-size: 14px;
+  text-indent: 20rpx;
   line-height: 1.5
 }
 /* 查看目录部分 */
@@ -78,6 +79,9 @@
   font-size: 16px;
   line-height: 16px;
   font-weight: 700
+}
+.look-warpper .look .look-btn:active{
+  color: #ccc
 }
 .look-warpper .time ,.look-warpper .look .catalog{
   padding-top: 4rpx

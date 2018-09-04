@@ -1,9 +1,6 @@
-/**index.wxss**/
-.index .slide-image{
-  width: 750rpx;
-  height: 350rpx;
-}
-/* 书籍部分 */
+/* pages/moreBooks/morebooks.wxss */
+@import "../index/index.wxss"
+
 .books-warpper{
   padding: 30rpx 20rpx 0 20rpx;
 }

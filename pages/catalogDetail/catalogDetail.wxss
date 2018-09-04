@@ -1,1 +1,61 @@
 /* pages/catalogDetail/catalogDetail.wxss */
+@import '/static/iconfont/iconfont.wxss';
+@import '/towxml/style/main.wxss';
+/**如果页面有动态主题切换，则需要将使用到的样式全部引入**/
+/**主题配色（浅色样式）**/
+@import '/towxml/style/theme/light.wxss';
+/**主题配色（深色样式）**/
+@import '/towxml/style/theme/dark.wxss';
+
+.content{
+  padding-bottom: 100rpx;
+  width: 100%;
+}
+.menu{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  z-index: 999;
+  justify-content: space-between;
+  border-top: 1px solid #f1f1f1;
+  line-height: 100rpx;
+  height: 100rpx;
+  background: #fff;
+}
+.menu .menu-item{
+  flex: 1;
+  font-size: 18px;
+  text-align: center
+}
+.menu .menu-item:active{
+  background: #ccc
+}
+.toggle-catalog{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 996;
+  background: rgba(0,0,0,.2); 
+  width: 100%
+}
+.toggle-catalog .catalog{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 998;
+  padding-bottom: 100rpx;
+  background: #FFF;
+  width: 80%;
+  min-height: 100%
+}
+.toggle-catalog .catalog .catalog-item{
+  padding: 20rpx;
+  font-size: 16px;
+  border-top: 2rpx solid #888
+}
+.toggle-catalog .catalog .catalog-item:active{
+  background: #888
+}

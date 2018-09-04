@@ -1,6 +1,7 @@
 // pages/catalog/catalog.js
 import {fetch} from "../../utils/util.js"
 
+
 Page({
 
   /**
@@ -20,6 +21,7 @@ Page({
     })
     this.getCatalogs(options.id)
   },
+  /**获取文章目录信息 */
   getCatalogs(id){
     fetch.get(`/titles/${id}`).then(res=>{
       this.setData({

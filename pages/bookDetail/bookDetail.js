@@ -12,9 +12,10 @@ Page({
     time: '',
     detail : {}
   },
+  /**跳转文章目录 */
   toCatalog(){
     wx:wx.navigateTo({
-      url: `/pages/catalog/catalog?id=${this.data.detail.book._id}`,
+      url: `/pages/catalog/catalog?id=${this.data.detail.data._id}`,
     })
   },
   /**
@@ -26,13 +27,17 @@ Page({
     })
     this.getDetail(options.id)
   },
+  /**获取文章详情信息 */
   getDetail(id) {
-    fetch.get( `/swiper/${id}`).then(res=>{
-      let timeStr = res.data.data.book.createTime.split('T')[0]
+    fetch.get( `/book/${id}`).then(res=>{
+      let timeStr = res.data.data.createTime.split('T')[0]
       let times = timeStr.split('-')
       let timeString = times[0] + '年' + times[1] + '月' + times[2] + '日'
+      wx.setNavigationBarTitle({
+        title: res.data.data.title,
+      })
       this.setData({
-        detail: res.data.data,
+        detail: res.data,
         time: timeString,
         isLoading: false
       })

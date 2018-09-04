@@ -1,15 +1,24 @@
 <!--pages/catalogDetail/catalogDetail.wxml-->
-<view class='cantainer'>
+<import src="/towxml/entry.wxml"/>
+<view class='container'>
   <image wx:if="{{isLoading}}" class='loading' src='/static/image/loading.svg'></image>
   <view wx:else>
-  
+    <view class='content'>
+      <template is="entry" data="{{...article}}"/>
+    </view>
+    <!-- 菜单部分 -->
+    <scroll-view wx:if="{{showCatalog}}" catchtap='toggle_catalog' scroll-y class='toggle-catalog'>
+      <view class='catalog'>
+        <view wx:for="{{catalogs}}" catchtap='changeContent' data-index='{{item.index}}' data-id='{{item._id}}' wx:key="index" class='catalog-item'>{{item.title}}</view> 
+      </view>
+    </scroll-view>
     <!-- 底部功能菜单 -->
     <view class='menu'>
-      <view class=''></view>
-      <view class=''></view>
-      <view class=''></view>
-      <view class=''></view>
-      <view class=''></view>
+      <view class='menu-item iconfont icon-shangyige' bindtap='changePage' data-type='cur'></view>
+      <view class='menu-item iconfont icon-sort' bindtap='toggle_catalog'></view>
+      <view class='menu-item iconfont icon-yueduye_zitijianxiao'></view>
+      <view class='menu-item iconfont icon-yueduye_zitizengda'></view>
+      <view class='menu-item iconfont icon-xiayige' bindtap='changePage'  data-type='next'></view>
     </view>
   </view>
 </view>
