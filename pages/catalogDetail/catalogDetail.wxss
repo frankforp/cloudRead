@@ -1,14 +1,7 @@
 /* pages/catalogDetail/catalogDetail.wxss */
 @import '/static/iconfont/iconfont.wxss';
-@import '/towxml/style/main.wxss';
-/**如果页面有动态主题切换，则需要将使用到的样式全部引入**/
-/**主题配色（浅色样式）**/
-@import '/towxml/style/theme/light.wxss';
-/**主题配色（深色样式）**/
-@import '/towxml/style/theme/dark.wxss';
-
+@import '/wemark/wemark.wxss';
 .content{
-  padding-bottom: 100rpx;
   width: 100%;
 }
 .menu{
@@ -40,6 +33,11 @@
   z-index: 996;
   background: rgba(0,0,0,.2); 
   width: 100%;
+  transform: translate3d(-100%,0,0);
+  transition: transform .3s ease
+}
+.active{
+  transform: translate3d(0,0,0)
 }
 .toggle-catalog .catalog{
   position: absolute;

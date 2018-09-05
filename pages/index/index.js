@@ -17,7 +17,6 @@ Page({
   /**获取轮播图信息 */
   getData(){
     fetch.get('/swiper').then(res=>{
-      console.log(res)
       this.setData({
         imgUrls : res.data.data,
         isLoading:false
@@ -27,7 +26,6 @@ Page({
   /**获取书籍信息 */
   getBooks(){
     fetch.get('/category/books').then(res => {
-      console.log(res.data.data)
       this.setData({
         books: res.data.data,
         isLoading: false

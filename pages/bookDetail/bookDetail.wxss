@@ -67,6 +67,7 @@
   display: flex;
   justify-content: space-between;
   padding: 30rpx 0;
+  margin-bottom: 150rpx;
   font-size: 14px;
   line-height: 14px
 }
@@ -93,6 +94,7 @@
   left: 0;
   right: 0;
   padding :20rpx 30rpx;
+  background: #FFF;
   border-top: 1px solid #CCC
 }
 .btn-warpper button{

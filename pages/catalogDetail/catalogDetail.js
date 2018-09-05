@@ -11,8 +11,9 @@ Page({
     showCatalog : false,
     isLoading: false,
     catalogs : [],
-    article : {},
-    page: 0
+    article :"",
+    page: 0,
+    fontSize : 48
   },
 
   /**
@@ -50,16 +51,15 @@ Page({
   getArticle(id, index){
     this.setData({
       isLoading: true,
+      showCatalog: false,
     })
     fetch.get(`/article/${id}`).then(res=>{
         //将markdown内容转换为towxml数据
-      let data = app.towxml.toJson(res.data.data.article.content, 'markdown');
       wx.setNavigationBarTitle({
         title: res.data.data.title,
       })
       this.setData({
-        article: data,
-        showCatalog: false,
+        article: res.data.data.article.content,
         isLoading: false,
         page: index
       })
@@ -71,18 +71,59 @@ Page({
     let index = this.data.page
     switch(t){
       case 'next':
-        index >= this.data.catalogs.length - 1 ? this.data.catalogs.length - 1 : index++
-        this.getArticle(this.data.catalogs[index]._id,index)
+        if (index >= this.data.catalogs.length - 1){
+          wx.showToast({
+            title: '已是最后',
+          })
+        }else{
+          index++
+          this.getArticle(this.data.catalogs[index]._id, index)              
+        }
         break
       case 'cur':
-        index <= 0 ? 0 : index--
-        this.getArticle(this.data.catalogs[index]._id,index)
+        if (index <=0) {
+          wx.showToast({
+            title: '已是首页',
+          })
+        } else {
+          index--
+          this.getArticle(this.data.catalogs[index]._id, index)              
+        }
         break
       default:
         break
     }
   },
-
+  /**放大缩小字体 f : lar 变大 sma 变小*/
+  changeFontSize(event){
+    let f = event.currentTarget.dataset.type
+    let fontSize = this.data.fontSize
+    switch(f){
+      case 'lar':
+        if(fontSize >= 100){
+          wx.showToast({
+            title: '太大了',
+          })
+        }else{
+          fontSize += 2
+        }
+        break
+      case 'sma':
+        if(fontSize <= 24){
+          wx.showToast({
+            title: '太小了',
+          })
+        }else{
+          fontSize -= 2
+        }
+        break
+      default:
+        break
+    }
+    this.setData({
+      fontSize
+    })
+  },
   /**
    * 用户点击右上角分享
    */

@@ -1,13 +1,12 @@
 <!--pages/catalogDetail/catalogDetail.wxml-->
-<import src="/towxml/entry.wxml"/>
 <view class='container'>
   <image wx:if="{{isLoading}}" class='loading' src='/static/image/loading.svg'></image>
   <view wx:else>
-    <view class='content'>
-      <template is="entry" data="{{...article}}"/>
+    <view class='content' style='font-size:{{fontSize}}rpx'>
+      <wemark md="{{article}}" highlight type="rich-text"></wemark>
     </view>
     <!-- 菜单部分 -->
-    <scroll-view wx:if="{{showCatalog}}" catchtap='toggle_catalog' scroll-y class='toggle-catalog'>
+    <scroll-view catchtap='toggle_catalog' scroll-y class='toggle-catalog {{showCatalog? "active" : ""}}'>
       <view class='catalog'>
         <view wx:for="{{catalogs}}" catchtap='changeContent' data-index='{{item.index}}' data-id='{{item._id}}' wx:key="index" class='catalog-item'>{{item.title}}</view> 
       </view>
@@ -16,8 +15,8 @@
     <view class='menu'>
       <view class='menu-item iconfont icon-shangyige' bindtap='changePage' data-type='cur'></view>
       <view class='menu-item iconfont icon-sort' bindtap='toggle_catalog'></view>
-      <view class='menu-item iconfont icon-yueduye_zitijianxiao'></view>
-      <view class='menu-item iconfont icon-yueduye_zitizengda'></view>
+      <view class='menu-item iconfont icon-yueduye_zitijianxiao' bindtap='changeFontSize' data-type='sma'></view>
+      <view class='menu-item iconfont icon-yueduye_zitizengda' bindtap='changeFontSize' data-type='lar'></view>
       <view class='menu-item iconfont icon-xiayige' bindtap='changePage'  data-type='next'></view>
     </view>
   </view>
