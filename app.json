@@ -11,7 +11,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "云阅读",
+    "navigationBarTitleText": "C阅读",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
