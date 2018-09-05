@@ -68,7 +68,7 @@
   justify-content: space-between;
   padding: 30rpx 0;
   margin-bottom: 150rpx;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 14px
 }
 .look-warpper .look{

@@ -1,5 +1,6 @@
 const baseUrl = "https://m.yaojunrong.com"
 
+/**封装fetch 异步数据请求对象 */
 const fetch = {
   http(url,method,data) {
     return new Promise((resolve,reject)=>{

@@ -1,6 +1,6 @@
 <!--pages/catalogDetail/catalogDetail.wxml-->
 <view class='container'>
-  <image wx:if="{{isLoading}}" class='loading' src='/static/image/loading.svg'></image>
+  <image wx:if="{{isLoading}}" class='loading' src='/static/image/m-loading.svg'></image>
   <view wx:else>
     <view class='content' style='font-size:{{fontSize}}rpx'>
       <wemark md="{{article}}" highlight type="rich-text"></wemark>

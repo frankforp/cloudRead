@@ -64,3 +64,9 @@
   font-size: 24rpx;
   color: #444
 }
+.books-warpper .book-warpper .book-detail .book-author .look-num text{
+  margin-left: 10rpx;
+  font-size: 14px;
+  font-weight: 700;
+  color: #F33
+}

@@ -1,5 +1,5 @@
 <!--pages/moreBooks/morebooks.wxml-->
-<view>
+<view class='container'>
   <image wx:if="{{isLoading}}" class='loading' src='/static/image/loading.svg'></image>
   <view wx:else class='books-warpper'>
     <view bindtap='jumpbook' data-id="{{item._id}}" class='book-warpper' wx:for="{{books}}" wx:key="index" >

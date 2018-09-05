@@ -28,7 +28,7 @@
           </view>
           <view class='book-author'>
             <view class='autor'>{{item.author}}</view>
-            <view class='look-num'>两天前后端开发{{item.looknums}}人在看</view>
+            <view class='look-num'>阅读量<text>{{item.looknums}}</text></view>
           </view>
         </view>
       </view>
