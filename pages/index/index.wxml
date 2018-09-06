@@ -28,12 +28,21 @@
           </view>
           <view class='book-author'>
             <view class='autor'>{{item.author}}</view>
-            <view class='look-num'>阅读量<text>{{item.looknums}}</text></view>
+            <view class='look-num'>热度<text>{{item.looknums}}</text></view>
           </view>
         </view>
       </view>
     </view>
-
+     <!-- 上拉加载.... -->
+     <view wx:if='{{isBottom}}'>
+      <view class='loading-more' wx:if='{{isMore}}'>
+        <image src='../../static/image/loadingMore.svg' class='img'></image>
+        <text class='loading-text'>正在加载...</text>
+      </view>
+      <view class='loading-end' wx:else>
+        <text class='end-text'>已经全部加载</text>
+      </view>
+     </view>
   </view>
 
 </view>
