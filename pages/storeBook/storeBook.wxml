@@ -5,9 +5,9 @@
   </view>
   <view wx:else class='warpper'>
     <view wx:for='{{bookList}}' wx:key='index'>
-      <view class='{{item.book == null? "none" : "book-warpper"}}'>
-        <view bindtap='delBook' data-id='{{item.book._id}}' class='icon-del iconfont icon-guanbi'></view>
-        <view>
+      <view bindlongpress='showDel' class='{{item.book == null? "none" : "book-warpper"}}'>
+        <view wx:if='{{isDel}}' bindtap='delBook' data-index='{{index}}' data-id='{{item.book._id}}' class='icon-del iconfont icon-guanbi'></view>
+        <view bindtap='toDetail' data-id='{{item.book._id || null}}'>
           <image class='img' src='{{item.book.img}}'></image>
         </view>
         <text class='book-name'>{{item.book.title}}</text>

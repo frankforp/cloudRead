@@ -15,6 +15,10 @@
   display: block;
   clear: both
 }
+.book-warpper:active{
+  background: #bbb;
+  box-shadow: 0 0 2rpx 3rpx #bbb
+}
 .book-warpper .icon-del{
   position: absolute;
   top: -20rpx;

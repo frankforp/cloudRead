@@ -8,9 +8,10 @@ Page({
   data: {
     bookList : [],      //书籍列表
     page : 1,           //分页  页数 默认为第一页
-    size : 2,            //每页的数量
+    size : 4,            //每页的数量
     isLoading: false,      //加载页是否显示
-    isAdd : false       //是否还有数据
+    isAdd : false,       //是否还有数据
+    isDel : false
   },
 
   /**
@@ -35,7 +36,8 @@ Page({
       this.setData({
         bookList: newArr,
         page:page,
-        isLoading: false
+        isLoading: false,
+        isDel: false
       })
     })
   },
@@ -46,15 +48,42 @@ Page({
   },
   /**删除收藏 */
   delBook(event){
+    let _this = this
     let bookId = event.currentTarget.dataset.id
-    wx.showActionSheet({
-      itemList: ['取消','确认'],
+    let delIndex = event.currentTarget.dataset.index
+    wx.showModal({
+      title: '删除收藏',
+      content: '确认删除吗？',
       success: function (res) {
-        console.log(res.tapIndex)
-      },
-      fail: function (res) {
-        console.log(res.errMsg)
+        if (res.confirm) {
+          fetch.delete(`/collection/${bookId}`).then(res=>{
+            let newArr = _this.data.bookList.map((item,index)=>{
+              if (index != delIndex) return item
+            })
+            _this.setData({
+              bookList: newArr,
+              isDel : false
+            })
+          })
+        } else if (res.cancel) {
+          _this.setData({
+            isDel: false
+          })
+        }
       }
+    })
+  },
+  /**显示删除按钮 */
+  showDel(){
+    this.setData({
+      isDel : true
+    })
+  },
+  /**跳转书籍详情 */
+  toDetail(event){
+    let id = event.currentTarget.dataset.id
+    wx.navigateTo({
+      url: `/pages/bookDetail/bookDetail?id=${id}`,
     })
   },
   /**
