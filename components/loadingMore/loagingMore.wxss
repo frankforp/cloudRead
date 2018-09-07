@@ -1,0 +1,26 @@
+/* components/loadingMore/loagingMore.wxss */
+/* 上拉加载部分 */
+.loading-more{
+  margin-bottom: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.loading-more .img{
+  width: 50rpx;
+  height: 50rpx
+}
+.loading-more .loading-text{
+  margin-left: 10rpx;
+  font-size: 12px;
+  color: #888
+}
+.loading-end{
+  text-align: center;
+  margin-bottom: 10rpx
+}
+.loading-end .end-text{
+  font-size: 12px;
+  color: #888
+}

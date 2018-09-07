@@ -1,0 +1,10 @@
+<!--components/loadingMore/loagingMore.wxml-->
+<template name='loadingMore'>
+  <view class='loading-more' wx:if='{{isMore}}'>
+    <image src='../../static/image/loadingMore.svg' class='img'></image>
+    <text class='loading-text'>正在加载...</text>
+  </view>
+  <view class='loading-end' wx:else>
+    <text class='end-text'>已经全部加载</text>
+  </view>
+</template>

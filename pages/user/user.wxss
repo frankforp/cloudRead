@@ -1,1 +1,36 @@
 /* pages/user/user.wxss */
+.user {
+  height: 500rpx;
+  width: 750rpx;
+  border-top: 2rpx solid #444;
+  background: #1e1e1e;
+}
+.header {
+  display: flex;
+  align-items: flex-end;
+  color: #e2e2e2;
+}
+.header .img {
+  margin-top: 20rpx;
+  margin-left: 20rpx; 
+  width: 200rpx;
+  height: 200rpx;
+  border: 2rpx solid #e2e2e2;
+  box-shadow:  1px 1px 1px 2px #FFF;
+  border-radius: 50%
+}
+.header .tag{
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0;
+  margin-left: 20rpx;
+}
+.header .tag .name{
+  font-size: 18px;
+  color: #e2e2e2
+}
+.header .tag .sign{
+  margin-top: 40rpx;
+  font-size: 14px;
+  color: #CCC
+}

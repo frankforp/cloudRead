@@ -1,2 +1,42 @@
 <!--pages/myStudy/myStudy.wxml-->
-<text>pages/myStudy/myStudy.wxml</text>
+<view class='container'>
+<image wx:if="{{isLoading}}" class='loading' src='/static/image/loading.svg'></image>
+  <view wx:else>
+    <view class='null-warn' wx:if='{{readList.length == 0}}'>
+      暂无阅读记录......
+    </view>
+    <view wx:else>
+      <!-- 书籍列表 -->
+      <view wx:for='{{readList}}' class='read-item' wx:key='index'>
+        <view class='img-warpper'>
+          <image src='{{item.book.img}}' class='img'></image>
+        </view>
+        <view class='content'>
+          <view class='title'>{{item.book.title}}</view>
+          <view class='catalog'>
+            <text class='my-catalog'>{{item.title.index}}</text>/{{item.title.total}}章</view>
+          <view>
+            <view class='progress'>
+              <progress stroke-width='4' percent='{{item.percent}}' active></progress>
+              <text class='progress-text'>{{item.percent}}%</text>
+            </view>
+            <view class='record'>
+              <text class='record-catalog'>已读到：{{item.title.title}}</text>
+              <text class='record-time'>上次阅读：{{item.updatedTime}}</text>
+            </view>
+          </view>
+          <view class='btn-warpper'>
+            <button bindtap='toCatalogDetail' data-id='{{item.title._id}}' data-bookId='{{item.book._id}}'>继续阅读</button>
+            <button bindtap='toBookDetail' data-page='{{item.title.index}}' data-bookId='{{item.book._id}}'>查看文档</button>
+          </view>
+        </view>
+      </view>
+    <!-- 书籍列表 end -->
+    <view class='end'>
+      到头了.....
+    </view>
+    </view>
+  
+  </view>
+  
+</view>

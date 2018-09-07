@@ -10,9 +10,9 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#1e1e1e",
     "navigationBarTitleText": "J阅读",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "list": [
@@ -24,7 +24,7 @@
       },
       {
         "pagePath": "pages/myStudy/myStudy",
-        "text": "我的学习",
+        "text": "我的阅读",
         "iconPath": "static/image/book.png",
         "selectedIconPath": "static/image/book-selector.png"
       },

@@ -1,1 +1,66 @@
 /* pages/myStudy/myStudy.wxss */
+.read-item{
+  display: flex;
+  justify-content: space-between;
+  margin: 10rpx 0;
+  padding: 20rpx 0;
+  border-bottom: 2rpx solid #CCC
+}
+.end,.null-warn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 14px;
+  color: #888
+}
+.read-item .img{
+  width: 220rpx;
+  height: 300rpx;
+  box-shadow: 0 0 1px 2px #888
+}
+.read-item .content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 480rpx
+}
+.read-item .content .title{
+  font-size: 16px
+}
+.read-item .content .catalog{
+  font-size: 14px;
+  color: #666
+}
+.read-item .content .catalog .my-catalog{
+  font-size: 15px;
+  font-weight: bold;
+  color: #09BB07
+}
+.read-item .content .record,.read-item .content .progress{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10rpx 0 ;
+  font-size: 10px;
+  color: #888
+}
+.read-item .content .progress progress{
+  display: flex;
+  height: 2px;
+  width: 350rpx;
+}
+.read-item .content .btn-warpper{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20rpx
+}
+.read-item .content .btn-warpper button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 200rpx;
+  height: 60rpx;
+  font-size: 14px
+}

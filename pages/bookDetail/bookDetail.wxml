@@ -20,8 +20,10 @@
       </view>
   <!-- 收藏与分享按钮 -->
       <view class='header-btn'>
-        <button>收藏</button>
-        <button>分享好友</button>
+        <button disabled='{{detail.isCollect == 0? "" : true}}' bindtap='addStore'>
+          {{detail.isCollect == 0? "添加收藏" : "已收藏"}}
+        </button>
+        <button open-type="share">分享好友</button>
       </view>
     </view>
   <!-- 简介部分 -->

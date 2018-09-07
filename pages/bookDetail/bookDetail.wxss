@@ -45,7 +45,8 @@
 }
 .header .header-btn button{
   font-size: 14px;
-  padding: 0 30rpx
+  padding: 0 30rpx;
+  width: 300rpx
 }
 /* 简介部分 */
 .intro{

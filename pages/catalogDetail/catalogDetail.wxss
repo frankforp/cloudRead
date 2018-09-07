@@ -3,6 +3,7 @@
 @import '/wemark/wemark.wxss';
 .content{
   width: 100%;
+  margin-bottom: 100rpx
 }
 .menu{
   position: fixed;
