@@ -6,7 +6,8 @@
     "pages/myStudy/myStudy",
     "pages/catalog/catalog",
     "pages/catalogDetail/catalogDetail",
-    "pages/moreBooks/morebooks"
+    "pages/moreBooks/morebooks",
+    "pages/storeBook/storeBook"
   ],
   "window": {
     "backgroundTextStyle": "light",

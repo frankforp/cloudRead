@@ -1,4 +1,6 @@
 /* pages/myStudy/myStudy.wxss */
+@import '/static/iconfont/iconfont.wxss';
+
 .read-item{
   display: flex;
   justify-content: space-between;

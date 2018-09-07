@@ -55,9 +55,11 @@ Page({
   updateData(data){
     let newArr = data.map(item=>{
       let obj = {}
-      let percent = Math.floor(100 * item.title.index / item.title.total)
+      let title = { ...item.title, index: item.title.index+1}
+      let newItem = {...item,title}
+      let percent = Math.floor(100 * title.index / title.total)
       let updatedTime = utils.updateTime(item.updatedTime)
-      obj = { ...item, updatedTime, percent}
+      obj = { ...newItem, updatedTime, percent}
       return obj
     })
     return newArr

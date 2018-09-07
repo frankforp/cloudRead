@@ -18,7 +18,7 @@
           <view>
             <view class='progress'>
               <progress stroke-width='4' percent='{{item.percent}}' active></progress>
-              <text class='progress-text'>{{item.percent}}%</text>
+              <text class='progress-text'>{{item.percent == 100 ? '已读完' : item.percent+'%'}}</text>
             </view>
             <view class='record'>
               <text class='record-catalog'>已读到：{{item.title.title}}</text>

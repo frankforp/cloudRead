@@ -1,0 +1,21 @@
+<!--pages/storeBook/storeBook.wxml-->
+<view class='container'>
+  <view class='null-warn' wx:if='{{bookList.length == 0}}'>
+    还没有收藏的书籍
+  </view>
+  <view wx:else class='warpper'>
+    <view wx:for='{{bookList}}' wx:key='index'>
+      <view class='{{item.book == null? "none" : "book-warpper"}}'>
+        <view bindtap='delBook' data-id='{{item.book._id}}' class='icon-del iconfont icon-guanbi'></view>
+        <view>
+          <image class='img' src='{{item.book.img}}'></image>
+        </view>
+        <text class='book-name'>{{item.book.title}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='bottom'>
+      <view class='end' wx:if='{{isAdd}}'>已经加载完毕...</view>
+      <button wx:else bindtap='getMore' class='load-btn'>点击获取更多</button>
+    </view>
+</view>
